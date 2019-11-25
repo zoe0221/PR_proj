@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Input</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    </head>
+    <body>
+    
+        <form action=input.msg method=post id=frm>
+            <fieldset style="width:300px; text-align: center;">
+                <legend>Input Message</legend>
+                <input type=text name="name" placeholder="Input your name"><br>
+                <input type=text name="msg" placeholder="Input message"><br>
+                
+                <input type=radio name=open value="public">공개
+                <input type=radio name=open value="private">비공개
+                <input type=radio name=open value="just for friend">친구 공개 <br>
+                <input type="button" value="Send" onclick="clicked();" id=send>
+            </fieldset>
+        </form>
+        
+        <script>
+            $("#send").on("click",function(){
+            	var result = confirm("이대로 실행?");
+            	if(result){
+            		$("#frm").submit();
+            	}
+            })
+        </script>
+    </body>
+</html>
+
+
+
